@@ -100,7 +100,7 @@ const MenuOne = () => {
             </div>
             <div className="text ml-3">
               <div className="text caption1">Free Consultancy</div>
-              <div className="number text-button">+91 9944325858</div>
+              <div className="number text-button">+91 9791912211</div>
             </div>
             <div
               className="menu-humburger hidden pointer"
