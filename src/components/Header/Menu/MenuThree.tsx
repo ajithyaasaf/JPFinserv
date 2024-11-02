@@ -39,7 +39,7 @@ const MenuThree = () => {
                 <div className="container flex items-center justify-between h-20">
                     <Link className="menu-left-block" href="/">
                         <Image
-                            src={'/images/LogoWhite.png'}
+                            src={'/images/LogoWhite.jpg'}
                             width={1800}
                             height={1600}
                             alt="logo"

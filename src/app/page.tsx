@@ -3,16 +3,10 @@ import MenuOne from "@/components/Header/Menu/MenuOne"
 import SliderOne from "@/components/Slider/SliderOne"
 import ServiceOne from "@/components/Section/Service/ServiceOne"
 import serviceData from "@/data/service.json"
-import PaymentGatewayOneFirst from "@/components/Section/PaymentGateway/PaymentGatewayOneFirst"
 import CaseStudyOne from "@/components/Section/CaseStudy/CaseStudyOne"
-import PaymentGatewayOneSecond from "@/components/Section/PaymentGateway/PaymentGatewayOneSecond"
-import FaqsOne from "@/components/Section/FAQs/FaqsOne"
-import FormRequestOne from "@/components/Section/FormRequest/FormRequestOne"
-import blogData from "@/data/blog.json"
-import BlogOne from "@/components/Section/Blog/BlogOne"
-import PartnerOne from "@/components/Section/Partner/PartnerOne"
 import Footer from "@/components/Footer/Footer"
-import CounterArea from "@/components/Other/CounterArea"
+import CounterTwo from "@/components/Section/Counter/CounterTwo"
+import PartnerAbout from "@/components/Section/Partner/PartnerAbout"
 
 export default function Home() {
   return (
@@ -25,17 +19,14 @@ export default function Home() {
         <main className="content">
           <SliderOne />
           <ServiceOne data={serviceData} />
-          <PaymentGatewayOneFirst />
           <CaseStudyOne />
-          <PaymentGatewayOneSecond />
-          <FaqsOne />
-          <FormRequestOne />
-          <BlogOne data={blogData} />
-          <PartnerOne classname="bg-blue lg:mt-[100px] sm:mt-16 mt-10" />
+          <CounterTwo classname="bg-gray-100 my-16" />
+          {/* <PartnerAbout classname="bg-gray-100 my-16" /> */}
+          {/* Add any necessary classname here */}
+          <footer id="footer">
+            <Footer />
+          </footer>
         </main>
-        <footer id="footer">
-          <Footer />
-        </footer>
       </div>
     </>
   )

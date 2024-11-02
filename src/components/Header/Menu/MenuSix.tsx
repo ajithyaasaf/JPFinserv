@@ -41,7 +41,7 @@ const MenuSix = () => {
                         <div className="main flex items-center justify-between lg:h-20 h-16 py-4 px-7 rounded-full">
                             <Link className="menu-left-block" href="/">
                                 <Image
-                                    src={'/images/LogoWhite.png'}
+                                    src={'/images/LogoWhite.jpg'}
                                     width={1800}
                                     height={1600}
                                     alt="logo"

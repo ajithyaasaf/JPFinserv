@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -15,26 +15,27 @@ const config: Config = {
       },
     },
     colors: {
-      transparent: 'transparent',
-      'black': '#121212',
-      'secondary': '#64666C',
-      'surface': '#F5F5F2',
-      'blue': '#2868D8',
-      'critical': '#EB4D4D',
-      'success': '#37CC8E',
-      'orange': '#EA603F',
-      'white': '#FFFFFF',
-      'deep-purple': '#15143B',
-      'gradient': '#5D47E2',
-      'dark': '#0F1E37',
-      'grey': '#3F4B5F',
-      'dark-blue': '#173363',
-      'dark-purple': '#130E38',
-      'placehover': '#B1B1B1',
-      'yellow': '#F2C94C',
-      'line': 'rgba(0, 0, 0, 0.1)',
+      transparent: "transparent",
+      black: "#121212",
+      secondary: "#64666C",
+      surface: "#F5F5F2",
+      blue: "#2868D8",
+      critical: "#EB4D4D",
+      success: "#37CC8E",
+      orange: "#EA603F",
+      white: "#FFFFFF",
+      "deep-purple": "#15143B",
+      gradient: "#5D47E2",
+      dark: "#0F1E37",
+      grey: "#3F4B5F",
+      "dark-blue": "#173363",
+      "dark-purple": "#130E38",
+      placehover: "#B1B1B1",
+      yellow: "#F2C94C",
+      line: "rgba(0, 0, 0, 0.1)",
+      "custom-blue": "#0e1d58",
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config

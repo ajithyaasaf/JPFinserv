@@ -478,7 +478,9 @@ const MenuFour = () => {
             </div>
             <div className="text ml-3">
               <div className="text-button-sm text-placehover">Call us 24/7</div>
-              <div className="number text-white text-button">+123 456 7890</div>
+              <div className="number text-white text-button">
+                +91 9944325858
+              </div>
             </div>
           </div>
         </div>

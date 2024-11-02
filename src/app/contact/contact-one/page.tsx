@@ -1,11 +1,74 @@
-import TopNavOne from "@/components/Header/TopNav/TopNavOne";
-import MenuOne from "@/components/Header/Menu/MenuOne";
-import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem";
-import CtaOne from "@/components/Section/CTA/CtaOne";
-import Footer from "@/components/Footer/Footer";
-import * as Icon from "@phosphor-icons/react/dist/ssr";
+"use client"
+
+import React, { useState } from "react"
+import { initializeApp } from "firebase/app"
+import { getDatabase, ref, push } from "firebase/database"
+import TopNavOne from "@/components/Header/TopNav/TopNavOne"
+import MenuOne from "@/components/Header/Menu/MenuOne"
+import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
+import CtaOne from "@/components/Section/CTA/CtaOne"
+import Footer from "@/components/Footer/Footer"
+import * as Icon from "@phosphor-icons/react/dist/ssr"
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCMOdvQW248_4ul-ciFEEmuOghb4xdS3gs",
+  authDomain: "jpfinserv-892e1.firebaseapp.com",
+  projectId: "jpfinserv-892e1",
+  storageBucket: "jpfinserv-892e1.appspot.com",
+  messagingSenderId: "166323272116",
+  appId: "1:166323272116:web:f440b4c76307ea463c5ae1",
+  databaseURL: "https://jpfinserv-892e1-default-rtdb.firebaseio.com/",
+}
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
+const database = getDatabase(app)
 
 export default function ContactStyleOne() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    loanType: "Home Loan",
+    message: "",
+  })
+
+  const [successMessage, setSuccessMessage] = useState("") // State for success message
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    try {
+      const contactRef = ref(database, "contacts")
+      const newContactRef = await push(contactRef, formData)
+      setSuccessMessage("Your details have been submitted successfully!") // Set success message
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        loanType: "Home Loan",
+        message: "",
+      })
+
+      // Clear the success message after 3 seconds
+      setTimeout(() => {
+        setSuccessMessage("")
+      }, 3000) // 3000 milliseconds = 3 seconds
+    } catch (error) {
+      console.error("Error saving data:", error)
+      setSuccessMessage("Failed to submit details, please try again.")
+    }
+  }
+
   return (
     <>
       <div className="overflow-x-hidden">
@@ -16,7 +79,7 @@ export default function ContactStyleOne() {
         <main className="content">
           <BreadcrumbItem
             link="Contact us"
-            img="/images/banner/about1.png"
+            img="/images/banner/about.jpg"
             title="Contact us"
             desc="Explore our Contact Us page for prompt assistance from our dedicated team."
           />
@@ -24,48 +87,14 @@ export default function ContactStyleOne() {
             <div className="container flex items-center justify-center">
               <div className="xm:w-5/6 w-full flex max-xl:flex-col xl:items-center gap-y-8">
                 <div className="w-full xl:w-2/5">
-                  <div className="infor bg-blue rounded-xl p-10">
-                    <div className="heading5 text-white">Get it touch</div>
+                  <div
+                    className="infor rounded-xl p-10"
+                    style={{ backgroundColor: "#0299ff" }} /* .bg-blue */
+                  >
+                    <div className="heading5 text-white">Get in touch</div>
                     <div className="body3 text-white mt-2">
-                      We will get back to you within 24 hours, or call us
-                      everyday
-                    </div>
-                    <div className="list-social flex flex-wrap items-center gap-3 md:mt-10 mt-6">
-                      <a
-                        className="item rounded-full w-12 h-12 flex items-center justify-center bg-surface"
-                        href="https://www.facebook.com/"
-                        target="_blank"
-                      >
-                        <i className="icon-facebook text-black"></i>
-                      </a>
-                      <a
-                        className="item rounded-full w-12 h-12 flex items-center justify-center bg-surface"
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                      >
-                        <i className="icon-in text-black"></i>
-                      </a>
-                      <a
-                        className="item rounded-full w-12 h-12 flex items-center justify-center bg-surface"
-                        href="https://www.twitter.com/"
-                        target="_blank"
-                      >
-                        <i className="icon-twitter text-sm text-black ml-1"></i>
-                      </a>
-                      <a
-                        className="item rounded-full w-12 h-12 flex items-center justify-center bg-surface"
-                        href="https://www.instagram.com/"
-                        target="_blank"
-                      >
-                        <i className="icon-insta text-sm text-black"></i>
-                      </a>
-                      <a
-                        className="item rounded-full w-12 h-12 flex items-center justify-center bg-surface"
-                        href="https://www.youtube.com/"
-                        target="_blank"
-                      >
-                        <i className="icon-youtube text-xs text-black"></i>
-                      </a>
+                      We will get back to you within 24 hours, or call us every
+                      day
                     </div>
                     <div className="list-more-infor md:mt-10 mt-6">
                       <div className="item flex items-center gap-3">
@@ -77,9 +106,10 @@ export default function ContactStyleOne() {
                         </div>
                         <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
-                          8AM - 6PM, Mon - sun
+                          8AM - 6PM, Mon - Sun
                         </div>
                       </div>
+
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.Phone
@@ -87,104 +117,129 @@ export default function ContactStyleOne() {
                             className="text-blue text-2xl"
                           />
                         </div>
-                        <div className="line-y"> </div>
+                        <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
-                          123 456 7890
+                          +91 97919 12211
                         </div>
                       </div>
+
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
-                          <Icon.EnvelopeSimple
-                            weight="bold"
+                          <Icon.Envelope
+                            weight="fill"
                             className="text-blue text-2xl"
                           />
                         </div>
-                        <div className="line-y"> </div>
+                        <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
-                          hi.avitex@gmail.com
+                          customercare@jpfinserv.com
                         </div>
                       </div>
+
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.MapPin
-                            weight="bold"
+                            weight="fill"
                             className="text-blue text-2xl"
                           />
                         </div>
-                        <div className="line-y"> </div>
+                        <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
-                          4140 Rd. Allentown, New Mexico 31134
+                          93,1st Floor, Navalar Nagar, Bye Pass Road, Madurai -
+                          625 016
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="w-full xl:w-3/5 xl:pl-20">
-                  <form className="form-block flex flex-col justify-between gap-5">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="form-block flex flex-col justify-between gap-5"
+                  >
                     <div className="heading">
                       <div className="heading5">Request a quote</div>
                       <div className="body3 text-secondary mt-2">
                         We will get back to you within 24 hours, or call us
-                        everyday
+                        every day
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div className="w-full">
                         <input
+                          name="name"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
                           type="text"
                           placeholder="Name"
+                          value={formData.name}
+                          onChange={handleChange}
                           required
                         />
                       </div>
                       <div className="w-full">
                         <input
+                          name="phone"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
-                          type="text"
-                          placeholder="Subject"
+                          type="number"
+                          placeholder="Ph No"
+                          value={formData.phone}
+                          onChange={handleChange}
                           required
                         />
                       </div>
                       <div className="col-span-2">
                         <input
+                          name="email"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
                           type="text"
                           placeholder="Email"
+                          value={formData.email}
+                          onChange={handleChange}
                           required
                         />
                       </div>
                       <div className="col-span-2">
                         <select
+                          name="loanType"
                           className="w-full bg-surface text-secondary caption1 pl-3 py-3 rounded-lg"
-                          name="form"
+                          value={formData.loanType}
+                          onChange={handleChange}
+                          required
                         >
-                          <option value="Financial Planning">
-                            Financial Planning
-                          </option>
-                          <option value="Business Planning">
-                            Business Planning
-                          </option>
-                          <option value="Development Planning">
-                            Development Planning
-                          </option>
+                          <option value="Home Loan">Home Loan</option>
+                          <option value="Mortgage Loan">Mortgage Loan</option>
+                          <option value="BT + Topup">BT + Topup</option>
+                          <option value="Business Loan">Business Loan</option>
+                          <option value="Personal Loan">Personal Loan</option>
+                          <option value="Vehicle Loan">Vehicle Loan</option>
+                          <option value="NRI Loan">NRI Loan</option>
                         </select>
-                        <i className="ph ph-caret-down"></i>
                       </div>
                       <div className="col-span-2 w-full">
                         <textarea
-                          className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
                           name="message"
+                          className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
                           rows={4}
                           placeholder="Your Message"
+                          value={formData.message}
+                          onChange={handleChange}
                           required
                         ></textarea>
                       </div>
                     </div>
                     <div className="button-block">
-                      <button className="button-main hover:border-blue bg-blue text-white text-button rounded-full">
+                      <button
+                        type="submit"
+                        className="button-main hover:border-blue bg-blue text-white text-button rounded-full"
+                      >
                         Submit request
                       </button>
                     </div>
+                    {successMessage && (
+                      <div style={{ color: "green" }} className="mt-2">
+                        {successMessage}
+                      </div>
+                    )}
                   </form>
                 </div>
               </div>
@@ -197,5 +252,5 @@ export default function ContactStyleOne() {
         </footer>
       </div>
     </>
-  );
+  )
 }

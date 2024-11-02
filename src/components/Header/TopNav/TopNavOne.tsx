@@ -12,18 +12,18 @@ const TopNavOne = () => {
             <div className="location flex items-center max-lg:hidden">
               <Icon.MapPin className="text-white text-xl" />
               <span className="ml-2 caption1 text-white">
-                Annanagar,Chennai
+                93,1st Floor, Navalar Nagar, Bye Pass Road, Madurai - 625 016
               </span>
             </div>
             <div className="mail lg:ml-7 flex items-center">
               <Icon.Envelope className="text-white text-xl" />
               <span className="ml-2 caption1 text-white">
-                JPfinserv@gmail.com
+                customercare@jpfinserv.com
               </span>
             </div>
           </div>
           <div className="right-block flex items-center gap-5">
-            <div className="select-block relative">
+            {/* <div className="select-block relative">
               <select className="border-none outline-none bg-dark text-white p-2 caption2">
                 <option value="English">English</option>
                 <option value="France">France</option>
@@ -33,17 +33,17 @@ const TopNavOne = () => {
                 weight="bold"
                 className="text-xs text-white icon -right-2"
               />
-            </div>
+            </div> */}
             <div className="line h-6 w-px bg-grey max-sm:hidden"> </div>
             <div className="list-social flex items-center gap-2.5 style-one max-sm:hidden">
               <Link
                 className="item rounded-full w-7 h-7 border-grey border-2 flex items-center justify-center"
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/profile.php?id=61566147273973"
                 target="_blank"
               >
                 <i className="icon-facebook text-sm"></i>
               </Link>
-              <Link
+              {/*      <Link
                 className="item rounded-full w-7 h-7 border-grey border-2 flex items-center justify-center"
                 href="https://www.linkedin.com/"
                 target="_blank"
@@ -56,21 +56,21 @@ const TopNavOne = () => {
                 target="_blank"
               >
                 <i className="icon-twitter text-[10px]"></i>
-              </Link>
+              </Link> */}
               <Link
                 className="item rounded-full w-7 h-7 border-grey border-2 flex items-center justify-center"
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/jpfinserv/"
                 target="_blank"
               >
                 <i className="icon-insta text-[10px]"></i>
               </Link>
-              <Link
+              {/*     <Link
                 className="item rounded-full w-7 h-7 border-grey border-2 flex items-center justify-center"
                 href="https://www.youtube.com/"
                 target="_blank"
               >
                 <i className="icon-youtube text-[10px]"></i>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
