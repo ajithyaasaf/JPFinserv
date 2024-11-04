@@ -68,7 +68,7 @@ const CounterTwo: React.FC<Props> = ({ classname }) => {
                 <div className="counter heading3">{currentManCount}</div>
               </div>
               <div className="body1 text-secondary text-center">
-                Current Man
+                Current Loan
               </div>
             </div>
           </div>
