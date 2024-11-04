@@ -40,9 +40,9 @@ export default function ServiceStyleOne() {
                   <div className="button-block">
                     <a
                       className="button-main hover:bg-black text-white bg-blue text-button inline-block py-3 px-9 rounded-full"
-                      href="/service-detail"
+                      href="/contact/contact-one"
                     >
-                      Discovery
+                      Contact
                     </a>
                   </div>
                 </div>

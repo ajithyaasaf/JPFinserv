@@ -19,7 +19,8 @@ export default function Home() {
         <main className="content">
           <SliderOne />
           <ServiceOne data={serviceData} />
-          <CaseStudyOne />
+          {/* Our Process */}
+          <CaseStudyOne /> {/*  type of loans */}
           <CounterTwo classname="bg-gray-100 my-16" />
           {/* <PartnerAbout classname="bg-gray-100 my-16" /> */}
           {/* Add any necessary classname here */}
