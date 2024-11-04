@@ -42,10 +42,10 @@ const MenuOne = () => {
             />
           </Link>
           <div className="menu-center-block h-full">
-            <ul className="menu-nav flex items-center xl:gap-2 h-full">
+            <ul className="menu-nav flex items-center h-full">
               {/* Home */}
               <li
-                className={`nav-item h-full flex items-center justify-center home ${
+                className={`nav-item h-full flex items-center justify-center ${
                   pathname === "/" ? "active" : ""
                 }`}
               >
@@ -96,7 +96,10 @@ const MenuOne = () => {
           </div>
           <div className="menu-right-block flex items-center">
             <div className="icon-call">
-              <i className="icon-phone-call text-4xl"></i>
+              <i
+                className="icon-phone-call text-4xl"
+                style={{ color: "#152152" }}
+              ></i>
             </div>
             <div className="text ml-3">
               <div className="text caption1">Free Consultancy</div>

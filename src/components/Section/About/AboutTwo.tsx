@@ -7,6 +7,7 @@ import * as Icon from "@phosphor-icons/react/dist/ssr"
 
 const AboutTwo = () => {
   const [tabActive, setTabActive] = useState<string>("about us")
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleTabActive = (item: string) => {
     setTabActive(item)
@@ -118,123 +119,16 @@ const AboutTwo = () => {
                     </li>
                   </ul>
                 </div>
-
-                <div className="more-infor mt-6"></div>
-                {/*  <div className="more-infor mt-6">
-                  <div className="infor flex items-center gap-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Identification of monthly
-                      incomeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-                    </div>
-                  </div>
-                  <div className="infor flex items-center gap-3 mt-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Creation of savings and investment plan
-                    </div>
-                  </div>
-                  <div className="infor flex items-center gap-3 mt-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Management and calculation of monthly expenses
-                    </div>
-                  </div>
-                </div> */}
               </div>
-              {/*  <div
-                className={`description item-filter ${
-                  tabActive === "mission" ? "show" : "hide"
-                }`}
-              >
-                <div className="title body3 text-secondary mt-4">
-                  Our mission is to provide comprehensive and personalized
-                  financial solutions that empower our clients to achieve their
-                  financial goals and secure their future.
-                </div>
-                <div className="more-infor mt-6">
-                  <div className="infor flex items-center gap-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Management and calculation of monthly expenses
-                    </div>
-                  </div>
-                  <div className="infor flex items-center gap-3 mt-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Identification of monthly income
-                    </div>
-                  </div>
-                  <div className="infor flex items-center gap-3 mt-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Creation of savings and investment plan
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-              {/* <div
-                className={`description item-filter ${
-                  tabActive === "vision" ? "show" : "hide"
-                }`}
-              >
-                <div className="title body3 text-secondary mt-4">
-                  Our unwavering vision is to be the most trusted and preferred
-                  partner in achieving financial success, diligently guiding our
-                  valued clients toward a secure and prosperous future.
-                </div>
-                <div className="more-infor mt-6">
-                  <div className="infor flex items-center gap-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Creation of savings and investment plan
-                    </div>
-                  </div>
-                  <div className="infor flex items-center gap-3 mt-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Management and calculation of monthly expenses
-                    </div>
-                  </div>
-                  <div className="infor flex items-center gap-3 mt-3">
-                    <Icon.CheckCircle
-                      weight="fill"
-                      className="text-blue text-xl"
-                    />
-                    <div className="text-button">
-                      Identification of monthly income
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className="button-block flex items-center gap-5 md:mt-10 mt-6 pb-2">
               <a
-                className="button-main text-white bg-blue hover-button-black text-button rounded-full"
+                className="button-main text-white text-button rounded-full"
+                style={{
+                  backgroundColor: isHovered ? "#0597fc" : "#152152",
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
                 href="/contact/contact-one" // Updated URL
               >
                 Get started
@@ -253,4 +147,5 @@ const AboutTwo = () => {
     </div>
   )
 }
+
 export default AboutTwo

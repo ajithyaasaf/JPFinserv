@@ -1,3 +1,5 @@
+"use client"
+
 import TopNavOne from "@/components/Header/TopNav/TopNavOne"
 import MenuOne from "@/components/Header/Menu/MenuOne"
 import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
@@ -7,8 +9,11 @@ import Partner from "@/components/Section/Partner/PartnerAbout"
 import CtaOne from "@/components/Section/CTA/CtaOne"
 import Footer from "@/components/Footer/Footer"
 import Image from "next/image"
+import { useState } from "react"
 
 export default function ServiceStyleOne() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <>
       <div className="overflow-x-hidden">
@@ -39,7 +44,13 @@ export default function ServiceStyleOne() {
                   </div>
                   <div className="button-block">
                     <a
-                      className="button-main hover:bg-black text-white bg-blue text-button inline-block py-3 px-9 rounded-full"
+                      className="button-main inline-block py-3 px-9 rounded-full"
+                      style={{
+                        backgroundColor: isHovered ? "#0597fc" : "#0f2054",
+                        color: "#fff",
+                      }}
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
                       href="/contact/contact-one"
                     >
                       Contact

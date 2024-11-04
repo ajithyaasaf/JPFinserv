@@ -6,8 +6,16 @@ import * as Icon from "@phosphor-icons/react/dist/ssr"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import "swiper/css/bundle"
+import { useState } from "react"
 
 const SliderOne = () => {
+  const [hovered, setHovered] = useState(false)
+
+  const buttonStyle = {
+    backgroundColor: hovered ? "#0597fc" : "#152152",
+    transition: "background-color 0.3s ease", // Smooth transition for the hover effect
+  }
+
   return (
     <>
       <div className="slider-block style-one">
@@ -63,10 +71,10 @@ const SliderOne = () => {
                         </span>
                       </div>
                       <div className="relative overflow-hidden">
-                        <span className=" text-blue block relative overflow-hidden">
+                        <span className="text-[#0597fc] block relative overflow-hidden">
                           Our Solution
                         </span>
-                        <span className=" text-blue block absolute top-0 left-0 w-full h-full">
+                        <span className="text-[#0597fc] block absolute top-0 left-0 w-full h-full">
                           Our Solution
                         </span>
                       </div>
@@ -78,7 +86,10 @@ const SliderOne = () => {
                     </div>
                     <div className="button-block md:mt-10 mt-6">
                       <Link
-                        className="button-main bg-blue text-white"
+                        className="button-main text-white"
+                        style={buttonStyle}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
                         Discovery now
@@ -88,6 +99,7 @@ const SliderOne = () => {
                 </div>
               </div>
             </SwiperSlide>
+            {/* Repeat SwiperSlide for other slides */}
             <SwiperSlide>
               <div className="slider-item slider-second">
                 <div className="bg-img">
@@ -120,10 +132,10 @@ const SliderOne = () => {
                         </span>
                       </div>
                       <div className="relative overflow-hidden">
-                        <span className=" text-blue block relative overflow-hidden">
+                        <span className="text-[#0597fc] block relative overflow-hidden">
                           Seamless Payments
                         </span>
-                        <span className=" text-blue block absolute top-0 left-0 w-full h-full">
+                        <span className="text-[#0597fc] block absolute top-0 left-0 w-full h-full">
                           Seamless Payments
                         </span>
                       </div>
@@ -135,7 +147,10 @@ const SliderOne = () => {
                     </div>
                     <div className="button-block md:mt-10 mt-6">
                       <Link
-                        className="button-main bg-blue text-white"
+                        className="button-main text-white"
+                        style={buttonStyle}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
                         Discovery now
@@ -177,10 +192,10 @@ const SliderOne = () => {
                         </span>
                       </div>
                       <div className="relative overflow-hidden">
-                        <span className=" text-blue block relative overflow-hidden">
+                        <span className="text-[#0597fc] block relative overflow-hidden">
                           Seamless Transactions
                         </span>
-                        <span className=" text-blue block absolute top-0 left-0 w-full h-full">
+                        <span className="text-[#0597fc] block absolute top-0 left-0 w-full h-full">
                           Seamless Transactions
                         </span>
                       </div>
@@ -192,7 +207,10 @@ const SliderOne = () => {
                     </div>
                     <div className="button-block md:mt-10 mt-6">
                       <Link
-                        className="button-main bg-blue text-white"
+                        className="button-main text-white"
+                        style={buttonStyle}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
                         Discovery now

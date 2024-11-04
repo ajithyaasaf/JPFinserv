@@ -26,6 +26,7 @@ const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
 
 export default function ContactStyleOne() {
+  const [isHovered, setIsHovered] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -230,7 +231,12 @@ export default function ContactStyleOne() {
                     <div className="button-block">
                       <button
                         type="submit"
-                        className="button-main hover:border-blue bg-blue text-white text-button rounded-full"
+                        className="button-main text-white text-button rounded-full"
+                        style={{
+                          backgroundColor: isHovered ? "#0597fc" : "#2a2a7e", // Adjust the hover color as needed
+                        }}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
                       >
                         Submit request
                       </button>
