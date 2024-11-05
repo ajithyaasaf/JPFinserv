@@ -5,6 +5,18 @@ import { ServiceType } from "@/type/ServiceType"
 import LoanFormModal from "@/components/Service/LoanFormModal" // Adjust the import path as needed
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 
+// Icons for loan types
+import {
+  House,
+  Briefcase,
+  Wallet,
+  Car,
+  User,
+  Plus,
+  Bank, // Added Bank icon for Mortgage Loan
+} from "@phosphor-icons/react"
+
+// Define the interface for props
 interface Props {
   data: ServiceType
   style: string
@@ -22,6 +34,22 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
     setIsModalOpen(false)
   }
 
+  // Set up an object mapping for icons based on loan type
+  const iconMapping: Record<string, React.JSX.Element> = {
+    "Home Loan": <House size={40} className="text-[#49befb]" />,
+    "Business Loan": <Briefcase size={40} className="text-[#49befb]" />,
+    "Personal Loan": <Wallet size={40} className="text-[#49befb]" />,
+    "Vehicle Loan": <Car size={40} className="text-[#49befb]" />,
+    "Mortgage Loan": <Bank size={40} className="text-[#49befb]" />, // Changed to Bank icon
+    "NRI Loan": <User size={40} className="text-[#49befb]" />,
+    "BT + Topup": <Plus size={40} className="text-[#49befb]" />,
+  }
+
+  // Type guard to ensure data.title is a valid key of iconMapping
+  const isValidTitle = (title: string): title is keyof typeof iconMapping => {
+    return title in iconMapping
+  }
+
   return (
     <>
       {style === "style-one" && (
@@ -31,7 +59,12 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
         >
           <div className="service-item-main h-full cursor-default">
             <div className="heading flex items-center justify-between">
-              <i className={`${data.icon} text-blue md:text-6xl text-5xl`}></i>
+              {/* Use the type guard to ensure valid key */}
+              {isValidTitle(data.title) ? (
+                iconMapping[data.title]
+              ) : (
+                <House size={40} className="text-[#152152]" />
+              )}
               <div className="number heading3 text-placehover">
                 {number + 1}
               </div>
@@ -43,6 +76,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-two" && (
         <div
           onClick={handleOpenModal}
@@ -50,7 +84,12 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
         >
           <div className="service-item-main flex items-center gap-8 h-full cursor-default">
             <div className="icon">
-              <i className={`${data.icon} text-blue md:text-5xl text-4xl`}></i>
+              {/* Use the type guard to ensure valid key */}
+              {isValidTitle(data.title) ? (
+                iconMapping[data.title]
+              ) : (
+                <House size={40} className="text-[#152152]" />
+              )}
             </div>
             <div className="infor">
               <div className="heading7 hover:text-blue duration-300">
@@ -68,6 +107,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-three" && (
         <div
           onClick={handleOpenModal}
@@ -86,6 +126,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-four" && (
         <div
           onClick={handleOpenModal}
@@ -100,6 +141,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-five" && (
         <div
           onClick={handleOpenModal}
@@ -107,7 +149,9 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
         >
           <div className="service-item-main h-full cursor-default">
             <div className="heading flex items-center justify-between">
-              <i className={`${data.icon} text-blue md:text-6xl text-5xl`}></i>
+              <i
+                className={`${data.icon} text-[#152152] md:text-6xl text-5xl`}
+              ></i>
               <div className="number heading3 text-placehover">
                 {number + 1}
               </div>
@@ -119,6 +163,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-six" && (
         <div className="service-item rounded-2xl border border-line hover-box-shadow">
           <div className="service-item-main block h-full px-8 pb-7 md:pt-14 pt-10 cursor-default">
@@ -132,6 +177,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-about" && (
         <div
           onClick={handleOpenModal}
@@ -139,7 +185,9 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
         >
           <div className="service-item-main flex flex-col justify-between h-full cursor-default">
             <div className="heading flex items-center gap-4">
-              <i className={`${data.icon} text-blue md:text-5xl text-4xl`}></i>
+              <i
+                className={`${data.icon} text-[#152152] md:text-5xl text-4xl`}
+              ></i>
               <div className="heading7 hover:text-blue duration-300">
                 {data.title}
               </div>
@@ -148,13 +196,16 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
       {style === "style-about-two" && (
         <div
           onClick={handleOpenModal}
           className="service-item px-4 bg-white rounded-lg cursor-pointer"
         >
           <div className="service-item-main flex flex-col items-center h-full cursor-default">
-            <i className={`${data.icon} text-blue md:text-6xl text-5xl`}></i>
+            <i
+              className={`${data.icon} text-[#152152] md:text-6xl text-5xl`}
+            ></i>
             <div className="heading7 text-center hover:text-blue duration-300 mt-6">
               {data.title}
             </div>
@@ -164,6 +215,8 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
           </div>
         </div>
       )}
+
+      {/* Modal component */}
       <LoanFormModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}

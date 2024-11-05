@@ -102,7 +102,7 @@ const MenuOne = () => {
               ></i>
             </div>
             <div className="text ml-3">
-              <div className="text caption1">Free Consultancy</div>
+              <div className="text caption1 pl-2">Call us</div>
               <div className="number text-button">+91 9791912211</div>
             </div>
             <div

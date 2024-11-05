@@ -71,7 +71,10 @@ const AboutTwo = () => {
                     Tax Returns (ITR).
                   </p>
 
-                  <h3 className="mt-4">Our Loan Products</h3>
+                  <h3 className="mt-4 text-xl font-bold text-blue-600 underline">
+                    Our Loan Products
+                  </h3>
+
                   <p>
                     We provide a comprehensive range of loan products designed
                     to cater to the diverse financial needs of individuals and

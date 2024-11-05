@@ -28,7 +28,7 @@ export default function AboutStyleOne() {
           <AboutTwo />
           <CounterTwo classname="lg:pb-[100px] sm:pb-16 pb-10" />
 
-          <ServiceAboutOne data={serviceData} />
+          {/* <ServiceAboutOne data={serviceData} /> */}
           {/*  <OurTeam />
           <PartnerAbout /> */}
           <CtaOne />

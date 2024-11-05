@@ -18,7 +18,10 @@ const ServiceOne: React.FC<Props> = ({ data }) => {
     <>
       <section className="service-block lg:mt-[100px] sm:mt-16 mt-10" ref={ref}>
         <div className="container">
-          <h3 className="heading3 text-center">Type of Loans</h3>
+          <h3 className="heading3 text-center">
+            Type <span className="no-capitalize">of</span> Loans
+          </h3>
+
           <div
             className="list-service grid lg:grid-cols-3 sm:grid-cols-2 gap-8 md:mt-10 mt-6 gap-y-10"
             style={{

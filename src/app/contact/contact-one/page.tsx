@@ -31,8 +31,9 @@ export default function ContactStyleOne() {
     name: "",
     phone: "",
     email: "",
-    loanType: "Home Loan",
+    loanType: "Select your Loan", // Default to 'Select your Loan'
     message: "",
+    address: "", // New field for address
   })
 
   const [successMessage, setSuccessMessage] = useState("") // State for success message
@@ -56,8 +57,9 @@ export default function ContactStyleOne() {
         name: "",
         phone: "",
         email: "",
-        loanType: "Home Loan",
+        loanType: "Select your Loan", // Reset loan type
         message: "",
+        address: "", // Reset address field
       })
 
       // Clear the success message after 3 seconds
@@ -98,6 +100,7 @@ export default function ContactStyleOne() {
                       day
                     </div>
                     <div className="list-more-infor md:mt-10 mt-6">
+                      {/* The information section */}
                       <div className="item flex items-center gap-3">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.Clock
@@ -182,7 +185,7 @@ export default function ContactStyleOne() {
                           name="phone"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
                           type="number"
-                          placeholder="Ph No"
+                          placeholder="Phone No"
                           value={formData.phone}
                           onChange={handleChange}
                           required
@@ -192,7 +195,7 @@ export default function ContactStyleOne() {
                         <input
                           name="email"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
-                          type="text"
+                          type="email"
                           placeholder="Email"
                           value={formData.email}
                           onChange={handleChange}
@@ -207,6 +210,9 @@ export default function ContactStyleOne() {
                           onChange={handleChange}
                           required
                         >
+                          <option value="Select your Loan">
+                            Select your Loan
+                          </option>
                           <option value="Home Loan">Home Loan</option>
                           <option value="Mortgage Loan">Mortgage Loan</option>
                           <option value="BT + Topup">BT + Topup</option>
@@ -215,6 +221,18 @@ export default function ContactStyleOne() {
                           <option value="Vehicle Loan">Vehicle Loan</option>
                           <option value="NRI Loan">NRI Loan</option>
                         </select>
+                      </div>
+                      {/* New Address Field */}
+                      <div className="col-span-2 w-full">
+                        <input
+                          name="address"
+                          className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
+                          type="text"
+                          placeholder="Your Address"
+                          value={formData.address}
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
                       <div className="col-span-2 w-full">
                         <textarea
