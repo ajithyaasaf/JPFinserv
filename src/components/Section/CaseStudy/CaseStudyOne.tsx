@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 
@@ -8,29 +10,15 @@ const CaseStudyOne = () => {
         <div className="container">
           <div className="heading text-center">
             <h3 className="heading3">Our Process</h3>
-            {/* <div className="right flex flex-col items-center gap-2 mt-3">
-              <div className="body3">
-                Exploring In-Depth and Inspiring Case Studies of Success Stories
-              </div>
-              <Link
-                className="flex items-center gap-2 hover:text-blue duration-300"
-                href="/case-studies/case-studies-one"
-              >
-                <div className="text-button">View Our Case Studies</div>
-                <Icon.CaretDoubleRight weight="bold" className="text-xs mt-1" />
-              </Link>
-            </div> */}
           </div>
         </div>
         <div className="list-case-study md:mt-10 mt-6">
-          <div className="list grid lg:grid-cols-4 sm:grid-cols-2">
+          <div className="list grid lg:grid-cols-4 sm:grid-cols-2 gap-y-6 sm:gap-y-10">
             {/* First Case Study */}
             <div className="w-full">
               <div className="case-study-item">
-                <div className="bg-img bg-white w-full h-[400px] block">
-                  {/* Replaced image with white background, increased height */}
-                </div>
-                <div className="text flex flex-col justify-between gap-3">
+                <div className="bg-img bg-white w-full h-[400px] block"></div>
+                <div className="text flex flex-col justify-between gap-3 py-6">
                   <div className="heading5">
                     <Link
                       className="text-black hover:text-white transition-colors duration-300"
@@ -62,10 +50,8 @@ const CaseStudyOne = () => {
             {/* Second Case Study */}
             <div className="w-full">
               <div className="case-study-item">
-                <div className="bg-img bg-white w-full h-[400px] block">
-                  {/* Replaced image with white background, increased height */}
-                </div>
-                <div className="text flex flex-col justify-between gap-3">
+                <div className="bg-img bg-white w-full h-[400px] block"></div>
+                <div className="text flex flex-col justify-between gap-3 py-6">
                   <div className="heading5">
                     <Link
                       className="text-black hover:text-white transition-colors duration-300"
@@ -97,14 +83,12 @@ const CaseStudyOne = () => {
             {/* Third Case Study */}
             <div className="w-full">
               <div className="case-study-item">
-                <div className="bg-img bg-white w-full h-[400px] block">
-                  {/* Replaced image with white background, increased height */}
-                </div>
-                <div className="text flex flex-col justify-between gap-3">
+                <div className="bg-img bg-white w-full h-[400px] block"></div>
+                <div className="text flex flex-col justify-between gap-3 py-6">
                   <div className="heading5">
                     <Link
                       className="text-black hover:text-white transition-colors duration-300"
-                      href="/contact/contact-onee"
+                      href="/contact/contact-one"
                     >
                       Approval
                     </Link>
@@ -132,10 +116,8 @@ const CaseStudyOne = () => {
             {/* Fourth Case Study */}
             <div className="w-full">
               <div className="case-study-item">
-                <div className="bg-img bg-white w-full h-[400px] block">
-                  {/* Replaced image with white background, increased height */}
-                </div>
-                <div className="text flex flex-col justify-between gap-3">
+                <div className="bg-img bg-white w-full h-[400px] block"></div>
+                <div className="text flex flex-col justify-between gap-3 py-6">
                   <div className="heading5">
                     <Link
                       className="text-black hover:text-white transition-colors duration-300"
@@ -166,6 +148,13 @@ const CaseStudyOne = () => {
           </div>
         </div>
       </section>
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .case-study-block .case-study-item {
+            animation: none; /* Disable moving animation */
+          }
+        }
+      `}</style>
     </>
   )
 }
