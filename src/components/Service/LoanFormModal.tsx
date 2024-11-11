@@ -31,17 +31,18 @@ const LoanFormModal: React.FC<LoanFormModalProps> = ({
 }) => {
   const [name, setName] = useState("")
   const [number, setNumber] = useState("")
+  const [address, setAddress] = useState("") // New state for address
   const [selectedLoanType, setSelectedLoanType] = useState(loanType)
   const [successMessage, setSuccessMessage] = useState("")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!name || !number) {
-      return // Prevent submission if fields are empty
+    if (!name || !number || !address) {
+      return // Prevent submission if any fields are empty
     }
 
-    const loanData = { name, number, loanType: selectedLoanType }
+    const loanData = { name, number, address, loanType: selectedLoanType }
 
     // Store the data in Firebase
     const loanRef = ref(database, "loans/" + Date.now()) // Unique key based on timestamp
@@ -50,6 +51,7 @@ const LoanFormModal: React.FC<LoanFormModalProps> = ({
         setSuccessMessage("Loan information submitted successfully!")
         setName("") // Clear input fields
         setNumber("")
+        setAddress("") // Clear address
         setSelectedLoanType(loanType) // Reset loan type to initial value
 
         // Close the modal and clear the success message after 2 seconds
@@ -82,16 +84,23 @@ const LoanFormModal: React.FC<LoanFormModalProps> = ({
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
           <input
-            type="text"
-            placeholder="Your Number"
+            type="number"
+            placeholder="Mobile Number"
             value={number}
             onChange={(e) => setNumber(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
             required
           />
           <select

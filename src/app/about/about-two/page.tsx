@@ -4,7 +4,7 @@ import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
 import AboutTwo from "@/components/Section/About/AboutTwo"
 import CounterTwo from "@/components/Section/Counter/CounterTwo"
 import ServiceAboutTwo from "@/components/Section/Service/ServiceAboutTwo"
-import serviceData from '@/data/service.json'
+import serviceData from "@/data/service.json"
 import FormRequestTwo from "@/components/Section/FormRequest/FormRequestTwo"
 import OurTeam from "@/components/Section/OurTeam/OurTeam"
 import Partner from "@/components/Section/Partner/PartnerAbout"
@@ -20,10 +20,18 @@ export default function AboutStyleTwo() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem link="About Us" img="/images/banner/about1.png" title="About Us" desc="We perform a full analysis of the client’s website and collect information about all the competitors to formulate a proper strategy." />
+          <BreadcrumbItem
+            link="About Us"
+            img="/images/banner/about1.png"
+            title="About Us"
+            desc="We conduct an in-depth analysis of your financial landscape, reviewing both your current position and competitor benchmarks. By gathering crucial insights, we craft tailored strategies designed to optimize performance, drive growth, and achieve your financial objectives."
+          />
           <AboutTwo />
           <ServiceAboutTwo data={serviceData} />
-          <FormRequestTwo classname="style-two style-about" bgImg="/images/banner/form-cta-about.png" />
+          <FormRequestTwo
+            classname="style-two style-about"
+            bgImg="/images/banner/form-cta-about.png"
+          />
           <OurTeam />
           <Partner />
           <CtaOne />
@@ -31,7 +39,7 @@ export default function AboutStyleTwo() {
         <footer id="footer">
           <Footer />
         </footer>
-      </div >
+      </div>
     </>
   )
 }

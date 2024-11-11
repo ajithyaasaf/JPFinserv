@@ -110,7 +110,7 @@ const Footer = () => {
                 <Link
                   href="https://godivatech.com/"
                   target="_blank"
-                  className="text-white  hover-underline hover:text-xl "
+                  className="text-white  hover-underline"
                 >
                   Godiva Tech
                 </Link>

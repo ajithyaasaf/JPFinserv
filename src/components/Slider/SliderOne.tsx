@@ -51,7 +51,7 @@ const SliderOne = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="container">
+                {/*  <div className="container">
                   <div className="text-content flex-columns-between">
                     <div className="heading2">
                       <div className="relative overflow-hidden">
@@ -96,7 +96,7 @@ const SliderOne = () => {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </SwiperSlide>
             {/* Repeat SwiperSlide for other slides */}

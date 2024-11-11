@@ -22,12 +22,7 @@ export default function ServiceStyleOne() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem
-            link="Our Services"
-            img="/images/banner/services.jpg"
-            title="Our Services"
-            desc="Expand your knowledge and skills in cryptocurrency trading through our educational resources."
-          />
+          <BreadcrumbItem link="Our Services" title="Our Services" />
           <div className="mt-[100px]">
             <div className="container">
               <div className="flex gap-8 max-lg:flex-col-reverse">
