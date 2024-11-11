@@ -104,12 +104,20 @@ const Footer = () => {
           <div className="border-line"></div>
           <div className="footer-bottom flex items-center justify-between pt-3 pb-3">
             <div className="left-block flex items-center">
+              {/* Make "Godiva Tech" clickable */}
               <div className="copy-right text-surface caption1">
-                ©2024 Designed and developed by Godiva Tech. All Rights
-                Reserved.
+                ©2024 Designed and developed by{" "}
+                <Link
+                  href="https://godivatech.com/"
+                  target="_blank"
+                  className="text-white  hover-underline hover:text-xl "
+                >
+                  Godiva Tech
+                </Link>
+                . All Rights Reserved.
               </div>
             </div>
-            <div className="nav-link flex items-center gap-2.5">
+            {/*  <div className="nav-link flex items-center gap-2.5">
               <a className="text-surface caption1 hover-underline" href="#!">
                 Terms Of Services
               </a>
@@ -121,7 +129,7 @@ const Footer = () => {
               <a className="text-surface caption1 hover-underline" href="#!">
                 Cookie Policy
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

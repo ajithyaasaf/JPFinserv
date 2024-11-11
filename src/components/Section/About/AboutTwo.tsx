@@ -71,7 +71,7 @@ const AboutTwo = () => {
                     Tax Returns (ITR).
                   </p>
 
-                  <h3 className="mt-4 text-xl font-bold text-blue-600 underline">
+                  {/* <h3 className="mt-4 text-xl font-bold text-blue-600 underline">
                     Our Loan Products
                   </h3>
 
@@ -120,7 +120,7 @@ const AboutTwo = () => {
                       home, our NRI loans are tailored to meet their specific
                       needs with convenient terms.
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>

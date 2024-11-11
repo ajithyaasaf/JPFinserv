@@ -104,8 +104,7 @@ export default function ContactStyleOne() {
                       <div className="item flex items-center gap-3">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.Clock
-                            weight="bold"
-                            className="text-blue text-2xl"
+                            className="text-blue text-2xl" // Remove weight="bold"
                           />
                         </div>
                         <div className="line-y"></div>
@@ -117,8 +116,7 @@ export default function ContactStyleOne() {
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.Phone
-                            weight="fill"
-                            className="text-blue text-2xl"
+                            className="text-blue text-2xl" // Remove weight="bold"
                           />
                         </div>
                         <div className="line-y"></div>
@@ -130,8 +128,7 @@ export default function ContactStyleOne() {
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.Envelope
-                            weight="fill"
-                            className="text-blue text-2xl"
+                            className="text-blue text-2xl" // Remove weight="bold"
                           />
                         </div>
                         <div className="line-y"></div>
@@ -143,8 +140,7 @@ export default function ContactStyleOne() {
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
                           <Icon.MapPin
-                            weight="fill"
-                            className="text-blue text-2xl"
+                            className="text-blue text-2xl" // Remove weight="bold"
                           />
                         </div>
                         <div className="line-y"></div>
@@ -251,7 +247,7 @@ export default function ContactStyleOne() {
                         type="submit"
                         className="button-main text-white text-button rounded-full"
                         style={{
-                          backgroundColor: isHovered ? "#0597fc" : "#2a2a7e", // Adjust the hover color as needed
+                          backgroundColor: isHovered ? "#0597fc" : "#050f3f", // Adjust the hover color as needed
                         }}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}

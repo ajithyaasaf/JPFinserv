@@ -65,9 +65,9 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
               ) : (
                 <House size={40} className="text-[#152152]" />
               )}
-              <div className="number heading3 text-placehover">
+              {/* <div className="number heading3 text-placehover">
                 {number + 1}
-              </div>
+              </div> */}
             </div>
             <div className="heading6 hover:text-blue duration-300 mt-6">
               {data.title}
@@ -149,12 +149,15 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
         >
           <div className="service-item-main h-full cursor-default">
             <div className="heading flex items-center justify-between">
-              <i
-                className={`${data.icon} text-[#152152] md:text-6xl text-5xl`}
-              ></i>
-              <div className="number heading3 text-placehover">
+              {/* Display the corresponding icon for style-five */}
+              {isValidTitle(data.title) ? (
+                iconMapping[data.title]
+              ) : (
+                <House size={40} className="text-[#152152]" />
+              )}
+              {/*   <div className="number heading3 text-placehover">
                 {number + 1}
-              </div>
+              </div> */}
             </div>
             <div className="heading7 hover:text-blue duration-300 mt-6">
               {data.title}
