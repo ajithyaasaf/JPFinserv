@@ -1,0 +1,66 @@
+/* 12. counter */
+.counter-area {
+  margin-top: -120px;
+}
+.counter-area .container {
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 46px 4px rgba(207, 207, 207, 0.3);
+  position: relative;
+}
+
+.counter-area2 {
+  margin-bottom: -120px;
+  position: relative;
+  z-index: 1;
+}
+.counter-area2 .container {
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 46px 4px rgba(207, 207, 207, 0.3);
+  position: relative;
+}
+
+.single-counter i {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #0b57e3;
+  border-radius: 50%;
+  margin: auto auto 15px;
+  color: #fff;
+  font-size: 40px;
+  line-height: 80px;
+}
+.single-counter img {
+  margin-bottom: 30px;
+}
+.count {
+  font-size: 36px;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1;
+  display: inline-block;
+  font-family: "Rubik", sans-serif;
+}
+.counter small {
+  font-size: 36px;
+  font-weight: 500;
+  color: #303030;
+  line-height: 1;
+  position: relative;
+}
+.single-counter p {
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #777;
+}
+.single-counter .line {
+  display: inline-block;
+  width: 1px;
+  height: 50px;
+  background: #0b57e3;
+  margin-bottom: -5px;
+  margin-top: 10px;
+}
