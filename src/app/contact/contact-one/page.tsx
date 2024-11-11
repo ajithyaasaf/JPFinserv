@@ -80,7 +80,12 @@ export default function ContactStyleOne() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem link="Contact us" title="Contact us" />
+          <BreadcrumbItem
+            img="/images/banner/services.jpg"
+            desc=""
+            link="Contact us"
+            title="Contact us"
+          />
           <div className="form-contact style-one lg:py-[100px] sm:py-16 py-10">
             <div className="container flex items-center justify-center">
               <div className="xm:w-5/6 w-full flex max-xl:flex-col xl:items-center gap-y-8">

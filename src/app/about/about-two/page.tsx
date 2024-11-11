@@ -20,7 +20,12 @@ export default function AboutStyleTwo() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem link="About Us" title="About Us" />
+          <BreadcrumbItem
+            img="/images"
+            desc=""
+            link="About Us"
+            title="About Us"
+          />
           <AboutTwo />
           <ServiceAboutTwo data={serviceData} />
           <FormRequestTwo

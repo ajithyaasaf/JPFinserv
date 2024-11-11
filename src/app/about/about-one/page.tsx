@@ -19,7 +19,12 @@ export default function AboutStyleOne() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem link="About Us" title="About Us" />
+          <BreadcrumbItem
+            img="/images/banner/about.jpg"
+            desc=""
+            link="About Us"
+            title="About Us"
+          />
           <AboutTwo />
           <CounterTwo classname="lg:pb-[100px] sm:pb-16 pb-10" />
 
