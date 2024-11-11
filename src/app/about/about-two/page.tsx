@@ -20,12 +20,7 @@ export default function AboutStyleTwo() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem
-            link="About Us"
-            img="/images/banner/about1.png"
-            title="About Us"
-            desc="We conduct an in-depth analysis of your financial landscape, reviewing both your current position and competitor benchmarks. By gathering crucial insights, we craft tailored strategies designed to optimize performance, drive growth, and achieve your financial objectives."
-          />
+          <BreadcrumbItem link="About Us" title="About Us" />
           <AboutTwo />
           <ServiceAboutTwo data={serviceData} />
           <FormRequestTwo
