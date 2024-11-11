@@ -80,12 +80,7 @@ export default function ContactStyleOne() {
           <MenuOne />
         </header>
         <main className="content">
-          <BreadcrumbItem
-            link="Contact us"
-            img="/images/banner/about.jpg"
-            title="Contact us"
-            desc="Explore our Contact Us page for prompt assistance from our dedicated team."
-          />
+          <BreadcrumbItem link="Contact us" title="Contact us" />
           <div className="form-contact style-one lg:py-[100px] sm:py-16 py-10">
             <div className="container flex items-center justify-center">
               <div className="xm:w-5/6 w-full flex max-xl:flex-col xl:items-center gap-y-8">
@@ -103,9 +98,7 @@ export default function ContactStyleOne() {
                       {/* The information section */}
                       <div className="item flex items-center gap-3">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
-                          <Icon.Clock
-                            className="text-blue text-2xl" // Remove weight="bold"
-                          />
+                          <Icon.Clock className="text-black text-2xl" />
                         </div>
                         <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
@@ -115,9 +108,7 @@ export default function ContactStyleOne() {
 
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
-                          <Icon.Phone
-                            className="text-blue text-2xl" // Remove weight="bold"
-                          />
+                          <Icon.Phone className="text-black text-2xl" />
                         </div>
                         <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
@@ -127,9 +118,7 @@ export default function ContactStyleOne() {
 
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
-                          <Icon.Envelope
-                            className="text-blue text-2xl" // Remove weight="bold"
-                          />
+                          <Icon.Envelope className="text-black text-2xl" />
                         </div>
                         <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
@@ -139,9 +128,7 @@ export default function ContactStyleOne() {
 
                       <div className="item flex items-center gap-3 mt-5">
                         <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
-                          <Icon.MapPin
-                            className="text-blue text-2xl" // Remove weight="bold"
-                          />
+                          <Icon.MapPin className="text-black text-2xl" />
                         </div>
                         <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
