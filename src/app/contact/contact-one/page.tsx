@@ -9,6 +9,7 @@ import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
 import CtaOne from "@/components/Section/CTA/CtaOne"
 import Footer from "@/components/Footer/Footer"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
+import emailjs from "emailjs-com"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -49,10 +50,37 @@ export default function ContactStyleOne() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    // Prepare the data to send in the email
+    const emailData = {
+      from_name: formData.name, // The user's name
+      phone: formData.phone, // The user's phone number
+      email: formData.email, // The user's email address
+      loan_type: formData.loanType, // The loan type selected
+      message: formData.message, // The user's message
+      address: formData.address, // The user's address
+      from_email: formData.email, // Set 'From' field to the user's email
+    }
+
     try {
+      // Send the form data to EmailJS
+      const result = await emailjs.send(
+        "service_k85p6uc", // Replace with your EmailJS Service ID
+        "template_9ue7arm", // Replace with your EmailJS Template ID
+        emailData,
+        "9VMEM3abPPM9o7lOD" // Replace with your EmailJS Public Key
+      )
+
+      console.log("Email successfully sent:", result.text)
+
+      // Save the form data to Firebase
       const contactRef = ref(database, "contacts")
-      const newContactRef = await push(contactRef, formData)
-      setSuccessMessage("Your details have been submitted successfully!") // Set success message
+      await push(contactRef, formData)
+
+      setSuccessMessage(
+        "Your details have been submitted successfully! We will get back to you shortly."
+      )
+
+      // Reset the form
       setFormData({
         name: "",
         phone: "",
@@ -65,9 +93,9 @@ export default function ContactStyleOne() {
       // Clear the success message after 3 seconds
       setTimeout(() => {
         setSuccessMessage("")
-      }, 3000) // 3000 milliseconds = 3 seconds
+      }, 3000)
     } catch (error) {
-      console.error("Error saving data:", error)
+      console.error("Error sending email:", error)
       setSuccessMessage("Failed to submit details, please try again.")
     }
   }

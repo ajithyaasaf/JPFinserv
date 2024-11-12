@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { initializeApp } from "firebase/app"
 import { getDatabase, ref, set } from "firebase/database"
+import emailjs from "emailjs-com"
 
 // Firebase configuration
 const firebaseConfig = {
@@ -35,7 +36,7 @@ const LoanFormModal: React.FC<LoanFormModalProps> = ({
   const [selectedLoanType, setSelectedLoanType] = useState(loanType)
   const [successMessage, setSuccessMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!name || !number || !address) {
@@ -44,25 +45,45 @@ const LoanFormModal: React.FC<LoanFormModalProps> = ({
 
     const loanData = { name, number, address, loanType: selectedLoanType }
 
-    // Store the data in Firebase
-    const loanRef = ref(database, "loans/" + Date.now()) // Unique key based on timestamp
-    set(loanRef, loanData)
-      .then(() => {
-        setSuccessMessage("Loan information submitted successfully!")
-        setName("") // Clear input fields
-        setNumber("")
-        setAddress("") // Clear address
-        setSelectedLoanType(loanType) // Reset loan type to initial value
+    // Send email via EmailJS
+    const emailData = {
+      from_name: name, // The user's name
+      phone: number, // The user's phone number
+      // Or dynamically capture the email fieldemail: "customer-email@example.com",
+      loan_type: selectedLoanType, // The loan type selected
+      message: "Customer has applied for a loan.", // Predefined message or you can capture a custom message
+      address: address, // The user's address
+    }
 
-        // Close the modal and clear the success message after 2 seconds
-        setTimeout(() => {
-          setSuccessMessage("") // Clear success message
-          onClose() // Close the modal
-        }, 2000) // Close modal after 2 seconds
-      })
-      .catch((error) => {
-        console.error("Error storing data: ", error)
-      })
+    try {
+      // Send the form data to EmailJS
+      await emailjs.send(
+        "service_k85p6uc", // Replace with your EmailJS Service ID
+        "template_utid5e4", // Replace with your EmailJS Template ID
+        emailData,
+        "9VMEM3abPPM9o7lOD" // Replace with your EmailJS Public Key
+      )
+
+      console.log("Email sent successfully!")
+
+      // Store the data in Firebase
+      const loanRef = ref(database, "loans/" + Date.now()) // Unique key based on timestamp
+      await set(loanRef, loanData)
+
+      setSuccessMessage("Loan information submitted successfully!")
+      setName("") // Clear input fields
+      setNumber("")
+      setAddress("") // Clear address
+      setSelectedLoanType(loanType) // Reset loan type to initial value
+
+      // Close the modal and clear the success message after 2 seconds
+      setTimeout(() => {
+        setSuccessMessage("") // Clear success message
+        onClose() // Close the modal
+      }, 2000) // Close modal after 2 seconds
+    } catch (error) {
+      console.error("Error sending email or saving data: ", error)
+    }
   }
 
   if (!isOpen) return null
