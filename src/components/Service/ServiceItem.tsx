@@ -102,7 +102,7 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
               onClick={handleOpenModal} // Open the modal on button click
               className="read-more flex items-center gap-1 mt-2 cursor-pointer"
             >
-              <div className="text-button-sm">Enquiry Now</div>
+              <div className="text-button-sm">Enquire Now</div>
               <Icon.CaretRight
                 weight="bold"
                 className="text-blue text-sm duration-300"

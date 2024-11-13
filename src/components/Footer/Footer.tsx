@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="lg:w-1/2">
               <div className="footer-navigate flex items-center justify-center gap-20">
                 <div className="footer-nav-item">
-                  <div className="item-heading text-button-sm text-white">
+                  <div className="item-heading text-button-sm text-white mr-4">
                     Quick Links
                   </div>
                   <ul className="list-nav mt-1">
