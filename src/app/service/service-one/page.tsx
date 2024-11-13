@@ -5,7 +5,6 @@ import MenuOne from "@/components/Header/Menu/MenuOne"
 import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
 import ServiceFive from "@/components/Section/Service/ServiceFive"
 import serviceData from "@/data/service.json"
-import Partner from "@/components/Section/Partner/PartnerAbout"
 import CtaOne from "@/components/Section/CTA/CtaOne"
 import Footer from "@/components/Footer/Footer"
 import Image from "next/image"
@@ -38,15 +37,15 @@ export default function ServiceStyleOne() {
                   <div className="body2 text-secondary">
                     We provide easy-to-understand services that help protect
                     your money and assets. Our goal is to keep you financially
-                    secure, even in uncertain times. Whether you're an
-                    individual or a business, we’ll help you manage risks and
-                    make sure you're ready for whatever comes next.
+                    secure, even in uncertain times. Whether you&apos;re an
+                    individual or a business, we&apos;ll help you manage risks
+                    and make sure you&apos;re ready for whatever comes next.
                     <br />
                     <br />
                     With our solutions, you can feel confident about your
-                    financial future. We’re here to offer guidance and support
-                    so you can make informed decisions and protect what matters
-                    most.
+                    financial future. We&apos;re here to offer guidance and
+                    support so you can make informed decisions and protect what
+                    matters most.
                   </div>
                   <div className="button-block">
                     <a
