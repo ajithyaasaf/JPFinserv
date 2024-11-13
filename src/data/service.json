@@ -14,6 +14,13 @@
     "shortDesc": "Unlock value from your assets with flexible mortgage loans."
   },
   {
+    "icon": "icon-education",
+    "category": "payment solution",
+    "title": "NRI Loan",
+    "desc": "Designed for NRIs, our loan offers hassle-free financing to support investments back home.",
+    "shortDesc": "Special loans for NRIs to finance investments in India."
+  },
+  {
     "icon": "icon-hand-house",
     "category": "payment solution",
     "title": "Business Loan",
@@ -34,13 +41,7 @@
     "desc": "Drive your dream car with our easy and affordable vehicle loan solutions.",
     "shortDesc": "Affordable loans to help you own your dream vehicle."
   },
-  {
-    "icon": "icon-education",
-    "category": "payment solution",
-    "title": "NRI Loan",
-    "desc": "Designed for NRIs, our loan offers hassle-free financing to support investments back home.",
-    "shortDesc": "Special loans for NRIs to finance investments in India."
-  },
+
   {
     "icon": "icon-coin-hand",
     "category": "financial planning",

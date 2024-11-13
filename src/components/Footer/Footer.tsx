@@ -11,12 +11,13 @@ const Footer = () => {
             <div className="lg:w-1/4">
               <div className="footer-company-infor flex flex-col justify-between gap-5">
                 <Image
-                  width={4000}
-                  height={3000}
-                  className="footer-logo w-[145px]"
+                  width={5000}
+                  height={4000}
+                  className="footer-logo  h-[65px] sm:w-[250px] w-[198px]" // Reduced size on small screens
                   src="/images/Logo.jpg"
                   alt="Logo"
                 />
+
                 <div className="text caption1 text-white">
                   We are a diversified company specialized in providing
                   comprehensive financial solutions for individuals and

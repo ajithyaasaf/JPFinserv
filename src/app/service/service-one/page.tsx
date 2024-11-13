@@ -33,14 +33,20 @@ export default function ServiceStyleOne() {
               <div className="flex gap-8 max-lg:flex-col-reverse">
                 <div className="w-full lg:w-1/2 flex flex-col justify-between gap-5 pr-10">
                   <div className="heading3">
-                    Effective Risk Management Solutions for Financial Stability
+                    Simple Solutions to Protect Your Finances
                   </div>
                   <div className="body2 text-secondary">
-                    We offer reliable Risk Management services to safeguard your
-                    assets, ensure financial stability, and navigate rapidly
-                    changing business environments. We understand that managing
-                    risks is crucial for the sustainability and success of your
-                    enterprise.
+                    We provide easy-to-understand services that help protect
+                    your money and assets. Our goal is to keep you financially
+                    secure, even in uncertain times. Whether you're an
+                    individual or a business, we’ll help you manage risks and
+                    make sure you're ready for whatever comes next.
+                    <br />
+                    <br />
+                    With our solutions, you can feel confident about your
+                    financial future. We’re here to offer guidance and support
+                    so you can make informed decisions and protect what matters
+                    most.
                   </div>
                   <div className="button-block">
                     <a
@@ -53,17 +59,18 @@ export default function ServiceStyleOne() {
                       onMouseLeave={() => setIsHovered(false)}
                       href="/contact/contact-one"
                     >
-                      Contact
+                      Get in Touch
                     </a>
                   </div>
                 </div>
+
                 <div className="w-full lg:w-1/2">
                   <div className="bg-img w-full overflow-hidden rounded-xl">
                     <Image
                       width={5000}
-                      height={5000}
+                      height={4000}
                       className="w-full h-full block"
-                      src="/images/component/assessment.png"
+                      src="/images/Serviceimage.jpg"
                       alt=""
                     />
                   </div>

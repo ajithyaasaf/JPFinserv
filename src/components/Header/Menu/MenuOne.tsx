@@ -29,19 +29,23 @@ const MenuOne = () => {
         className={`header-menu style-one bg-white ${
           fixedHeader ? "fixed" : ""
         }`}
+        style={{ height: "100px" }} // Default larger height for desktop/tablet
       >
-        <div className="container flex items-center justify-between h-20">
+        <div className="container flex items-center justify-between h-full">
+          {/* Logo */}
           <Link className="menu-left-block" href="/">
             <Image
               src={"/images/Logo.jpg"}
-              width={2000}
+              width={2000} // Keeping previous width for the logo
               height={1000}
               alt="logo"
               priority={true}
-              className="w-[149px] max-sm:w-[132px]"
+              className="w-[300px] max-sm:w-[180px]" // Slightly increased logo size for larger screens
             />
           </Link>
-          <div className="menu-center-block h-full">
+
+          {/* Menu items (Center block) */}
+          <div className="menu-center-block h-full flex justify-center items-center">
             <ul className="menu-nav flex items-center h-full">
               {/* Home */}
               <li
@@ -94,6 +98,8 @@ const MenuOne = () => {
               </li>
             </ul>
           </div>
+
+          {/* Right section (Call and Hamburger) */}
           <div className="menu-right-block flex items-center">
             <div className="icon-call">
               <i
@@ -113,6 +119,7 @@ const MenuOne = () => {
             </div>
           </div>
         </div>
+
         {/* Mobile Menu */}
         <div id="menu-mobile-block" className={`${openMenuMobile && "open"}`}>
           <div className="menu-mobile-main">
@@ -143,6 +150,15 @@ const MenuOne = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        /* Mobile Menu Height Adjustment */
+        @media (max-width: 768px) {
+          .header-menu {
+            height: 70px !important; /* Reduced height on mobile */
+          }
+        }
+      `}</style>
     </>
   )
 }

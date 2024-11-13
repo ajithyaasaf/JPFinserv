@@ -153,7 +153,7 @@ const SliderOne = () => {
                         onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
-                        Discovery now
+                        Enquire Now
                       </Link>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ const SliderOne = () => {
                         onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
-                        Discovery now
+                        Enquire Now
                       </Link>
                     </div>
                   </div>

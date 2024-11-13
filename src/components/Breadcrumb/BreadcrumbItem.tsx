@@ -12,7 +12,7 @@ interface Props {
 
 const BreadcrumbItem: React.FC<Props> = ({ link, img, title, desc }) => {
   return (
-    <div className="breadcrumb-block w-full lg:h-[400px] sm:h-[360px] h-[320px] relative">
+    <div className="breadcrumb-block w-full lg:h-[400px] sm:h-[360px] h-[320px] relative mt-4">
       <div className="bg-img w-full h-full absolute top-0 left-0 z-[-1]">
         <Image
           src={img}

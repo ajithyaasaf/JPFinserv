@@ -14,7 +14,7 @@ const CaseStudyOne = () => {
         </div>
         <div className="list-case-study md:mt-10 mt-6">
           <div className="list grid lg:grid-cols-4 sm:grid-cols-2 gap-y-6 sm:gap-y-10">
-            {/* First Case Study */}
+            {/* First Case Study: Free Cibil Check */}
             <div className="w-full">
               <div className="case-study-item">
                 <div className="bg-img bg-white w-full h-[400px] block"></div>
@@ -28,8 +28,8 @@ const CaseStudyOne = () => {
                     </Link>
                   </div>
                   <div className="body2 text-black">
-                    We are committed to providing reliable and high-quality
-                    financial advisory in our services.
+                    Get a free CIBIL score check to assess your creditworthiness
+                    and take the first step towards better financial health.
                   </div>
                   <Link
                     className="flex items-center gap-1"
@@ -47,7 +47,7 @@ const CaseStudyOne = () => {
               </div>
             </div>
 
-            {/* Second Case Study */}
+            {/* Second Case Study: Documentation */}
             <div className="w-full">
               <div className="case-study-item">
                 <div className="bg-img bg-white w-full h-[400px] block"></div>
@@ -61,8 +61,8 @@ const CaseStudyOne = () => {
                     </Link>
                   </div>
                   <div className="body2 text-black">
-                    With an experienced and skilled team, we bring the necessary
-                    expertise to enhance work productivity.
+                    We handle all documentation to ensure your financial process
+                    is smooth and meets all necessary requirements.
                   </div>
                   <Link
                     className="flex items-center gap-1"
@@ -80,7 +80,7 @@ const CaseStudyOne = () => {
               </div>
             </div>
 
-            {/* Third Case Study */}
+            {/* Third Case Study: Approval */}
             <div className="w-full">
               <div className="case-study-item">
                 <div className="bg-img bg-white w-full h-[400px] block"></div>
@@ -94,8 +94,8 @@ const CaseStudyOne = () => {
                     </Link>
                   </div>
                   <div className="body2 text-black">
-                    We constantly seek advanced solutions to address challenges
-                    and deliver the highest value to our customers.
+                    We work to secure approvals quickly, ensuring that you get
+                    the best terms for your loan or financial product.
                   </div>
                   <Link
                     className="flex items-center gap-1"
@@ -113,7 +113,7 @@ const CaseStudyOne = () => {
               </div>
             </div>
 
-            {/* Fourth Case Study */}
+            {/* Fourth Case Study: Sanction & Payments */}
             <div className="w-full">
               <div className="case-study-item">
                 <div className="bg-img bg-white w-full h-[400px] block"></div>
@@ -127,8 +127,8 @@ const CaseStudyOne = () => {
                     </Link>
                   </div>
                   <div className="body2 text-black">
-                    With over 21 years of serving industrial customers and over
-                    3000 projects, we have the experience to solve almost.
+                    After approval, we ensure a quick and secure sanction and
+                    payment process, with clear terms and timely transfers.
                   </div>
                   <Link
                     className="flex items-center gap-1"
