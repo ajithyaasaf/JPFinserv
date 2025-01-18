@@ -13,11 +13,10 @@ const Footer = () => {
                 <Image
                   width={5000}
                   height={4000}
-                  className="footer-logo  h-[65px] sm:w-[250px] w-[198px]" // Reduced size on small screens
+                  className="footer-logo h-[65px] sm:w-[250px] w-[198px]" // Reduced size on small screens
                   src="/images/Logo.jpg"
                   alt="Logo"
                 />
-
                 <div className="text caption1 text-white">
                   We are a diversified company specialized in providing
                   comprehensive financial solutions for individuals and
@@ -41,10 +40,16 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2">
-              <div className="footer-navigate flex items-center justify-center gap-20">
-                <div className="footer-nav-item">
-                  <div className="item-heading text-button-sm text-white mr-4">
+
+            {/* Center Quick Links and its content */}
+            <div className="lg:w-1/2 flex justify-center items-center">
+              <div className="footer-navigate flex flex-col justify-center items-center">
+                {" "}
+                {/* Center the "Quick Links" and its list */}
+                <div className="footer-nav-item text-center">
+                  {" "}
+                  {/* Make the heading and list centered */}
+                  <div className="item-heading text-button-sm text-white">
                     Quick Links
                   </div>
                   <ul className="list-nav mt-1">
@@ -76,6 +81,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
             <div className="lg:w-1/4">
               <div className="company-contact">
                 <div className="heading text-button-sm text-white">
@@ -102,35 +108,23 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
           <div className="border-line"></div>
+
           <div className="footer-bottom flex items-center justify-between pt-3 pb-3">
             <div className="left-block flex items-center">
-              {/* Make "Godiva Tech" clickable */}
               <div className="copy-right text-surface caption1">
                 ©2024 Designed and developed by{" "}
                 <Link
                   href="https://godivatech.com/"
                   target="_blank"
-                  className="text-white  hover-underline"
+                  className="text-white hover-underline"
                 >
                   Godiva Tech
                 </Link>
                 . All Rights Reserved.
               </div>
             </div>
-            {/*  <div className="nav-link flex items-center gap-2.5">
-              <a className="text-surface caption1 hover-underline" href="#!">
-                Terms Of Services
-              </a>
-              <span className="text-surface caption1">|</span>
-              <a className="text-surface caption1 hover-underline" href="#!">
-                Privacy Policy
-              </a>
-              <span className="text-surface caption1">|</span>
-              <a className="text-surface caption1 hover-underline" href="#!">
-                Cookie Policy
-              </a>
-            </div> */}
           </div>
         </div>
       </div>

@@ -155,7 +155,7 @@ export default function ContactStyleOne() {
                         </div>
                         <div className="line-y"></div>
                         <div className="text-button normal-case text-white">
-                          customercare@jpfinserv.com
+                          Service@jpfinserv.com
                         </div>
                       </div>
 

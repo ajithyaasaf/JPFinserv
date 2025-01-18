@@ -18,7 +18,7 @@ const TopNavOne = () => {
             <div className="mail lg:ml-7 flex items-center">
               <Icon.Envelope className="text-white text-xl" />
               <span className="ml-2 caption1 text-white">
-                service@jpfinserv.com
+                Service@jpfinserv.com
               </span>
             </div>
           </div>
