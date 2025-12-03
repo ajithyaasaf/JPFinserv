@@ -32,28 +32,29 @@
   color: #ffffff;
 }
 
-.wa-tooltip {
+.wa-notice {
   position: absolute;
-  right: 72px;
-  padding: 6px 10px;
+  right: 0;
+  bottom: 68px;
+  padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.96);
+  background: #111827;
   color: #f9fafb;
   font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.35);
   white-space: nowrap;
-  opacity: 0;
-  transform: translateY(4px);
-  pointer-events: none;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.45);
-  transition:
-    opacity 0.15s ease,
-    transform 0.15s ease;
 }
 
-.wa-float:hover .wa-tooltip {
-  opacity: 1;
-  transform: translateY(0);
+.wa-notice::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 16px;
+  width: 10px;
+  height: 10px;
+  background: #111827;
+  transform: rotate(45deg);
 }
 
 @media (max-width: 767.99px) {
@@ -68,7 +69,7 @@
     font-size: 24px;
   }
 
-  .wa-tooltip {
+  .wa-notice {
     display: none;
   }
 }
