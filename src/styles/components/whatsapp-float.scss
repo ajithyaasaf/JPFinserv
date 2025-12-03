@@ -1,0 +1,76 @@
+.wa-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #4be88c, #22c35e);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.32);
+  z-index: 1000;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.wa-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.36);
+  background: radial-gradient(circle at 30% 30%, #5cf09a, #1aaa4e);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.wa-icon {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 72px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.96);
+  color: #f9fafb;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.45);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.wa-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 767.99px) {
+  .wa-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .wa-icon {
+    font-size: 24px;
+  }
+
+  .wa-tooltip {
+    display: none;
+  }
+}
+
+

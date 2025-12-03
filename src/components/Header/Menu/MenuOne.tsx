@@ -101,16 +101,22 @@ const MenuOne = () => {
 
           {/* Right section (Call and Hamburger) */}
           <div className="menu-right-block flex items-center">
-            <div className="icon-call">
-              <i
-                className="icon-phone-call text-4xl"
-                style={{ color: "#152152" }}
-              ></i>
-            </div>
-            <div className="text ml-3">
-              <div className="text caption1 pl-2">Call us</div>
-              <div className="number text-button">+91 9791912211</div>
-            </div>
+            <a
+              href="tel:+919791912211"
+              className="flex items-center"
+              aria-label="Call us at +91 97919 12211"
+            >
+              <div className="icon-call">
+                <i
+                  className="icon-phone-call text-4xl"
+                  style={{ color: "#152152" }}
+                ></i>
+              </div>
+              <div className="text ml-3">
+                <div className="text caption1 pl-2">Call us</div>
+                <div className="number text-button">+91 97919 12211</div>
+              </div>
+            </a>
             <div
               className="menu-humburger hidden pointer"
               onClick={() => setOpenMenuMobile(!openMenuMobile)}
@@ -150,15 +156,6 @@ const MenuOne = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        /* Mobile Menu Height Adjustment */
-        @media (max-width: 768px) {
-          .header-menu {
-            height: 70px !important; /* Reduced height on mobile */
-          }
-        }
-      `}</style>
     </>
   )
 }
