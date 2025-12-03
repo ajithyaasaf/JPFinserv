@@ -10,6 +10,7 @@ import "swiper/css/bundle";
 type SlideConfig = {
   id: string;
   desktopSrc: string;
+  tabletSrc?: string;
   mobileSrc?: string;
   alt: string;
   wrapperClass: string;
@@ -25,7 +26,8 @@ const slides: SlideConfig[] = [
   {
     id: "hero-banner-2",
     desktopSrc: "/images/slider/Home_Banner_2.jpg",
-    mobileSrc: "/images/slider/Home_Banner_2_tablet.jpg",
+    tabletSrc: "/images/slider/Home_Banner_2_tablet.jpg",
+    mobileSrc: "/images/slider/Home_Banner_2_mobile.jpg",
     alt: "Home Banner 2",
     wrapperClass: "slider-second",
   },
@@ -37,16 +39,31 @@ const slides: SlideConfig[] = [
   },
 ];
 
+type Viewport = "desktop" | "tablet" | "mobile";
+
 const SliderOne = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [viewport, setViewport] = useState<Viewport>("desktop");
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 768px)");
-    const handleChange = () => setIsMobile(media.matches);
+    const updateViewport = () => {
+      if (typeof window === "undefined") return;
 
-    handleChange();
-    media.addEventListener("change", handleChange);
-    return () => media.removeEventListener("change", handleChange);
+      const width = window.innerWidth;
+      if (width <= 767) {
+        setViewport("mobile");
+      } else if (width <= 1023) {
+        setViewport("tablet");
+      } else {
+        setViewport("desktop");
+      }
+    };
+
+    updateViewport();
+    window.addEventListener("resize", updateViewport);
+
+    return () => {
+      window.removeEventListener("resize", updateViewport);
+    };
   }, []);
 
   return (
@@ -76,8 +93,13 @@ const SliderOne = () => {
           }}
         >
           {slides.map((slide, index) => {
-            const imageSrc =
-              isMobile && slide.mobileSrc ? slide.mobileSrc : slide.desktopSrc;
+            let imageSrc = slide.desktopSrc;
+
+            if (viewport === "mobile" && slide.mobileSrc) {
+              imageSrc = slide.mobileSrc;
+            } else if (viewport === "tablet" && slide.tabletSrc) {
+              imageSrc = slide.tabletSrc;
+            }
 
             return (
               <SwiperSlide key={slide.id}>
