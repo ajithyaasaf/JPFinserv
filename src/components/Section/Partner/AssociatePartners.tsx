@@ -134,28 +134,6 @@ const AssociatePartners: React.FC<Props> = ({ classname }) => {
                         ))}
                     </Marquee>
                 </div>
-
-                {/* Stats */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '48px',
-                    marginTop: '48px',
-                    flexWrap: 'wrap'
-                }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '32px', fontWeight: '700', color: '#121212' }}>9+</div>
-                        <div style={{ fontSize: '14px', color: '#64666c' }}>Partner Institutions</div>
-                    </div>
-                    <div style={{ textAlign: 'center', borderLeft: '1px solid #e5e7eb', borderRight: '1px solid #e5e7eb', paddingLeft: '48px', paddingRight: '48px' }}>
-                        <div style={{ fontSize: '32px', fontWeight: '700', color: '#121212' }}>4</div>
-                        <div style={{ fontSize: '14px', color: '#64666c' }}>Leading Banks</div>
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '32px', fontWeight: '700', color: '#121212' }}>5</div>
-                        <div style={{ fontSize: '14px', color: '#64666c' }}>Housing NBFCs</div>
-                    </div>
-                </div>
             </div>
         </section>
     )
